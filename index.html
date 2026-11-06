@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>NEXUS | AI Internet Control Room</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="layout">
+<aside class="sidebar">
+  <div class="logo">✦ NEXUS</div>
+  <div class="caption">AI INTERNET CONTROL ROOM</div>
+  <nav>
+    <button class="nav active">◈ Control Room</button>
+    <button class="nav">◎ Planner</button>
+    <button class="nav">▣ Monitor</button>
+    <button class="nav">⚙ Tools</button>
+  </nav>
+  <div class="system"><small>SYSTEM STATUS</small><h3>🟢 OPERATIONAL</h3><p>Planner, monitor and task engine are ready.</p></div>
+</aside>
+
+<main>
+<header>
+  <div>
+    <div class="eyebrow">CONTROL ROOM / MISSION PLANNER</div>
+    <h1>Turn complexity into a <span>clear route.</span></h1>
+    <p class="sub">Give NEXUS a high-level goal. The planner breaks it into smaller actions while the monitor tracks every step.</p>
+  </div>
+  <div class="live">🟢 LIVE MONITOR</div>
+</header>
+
+<section class="input-card">
+  <label>ENTER YOUR OBJECTIVE</label>
+  <textarea id="goal" placeholder="Example: I want to complete my college project this week..."></textarea>
+  <div class="chips">
+    <button onclick="example('Prepare for my college examination')">📚 Education</button>
+    <button onclick="example('Plan a 5 day trip within my budget')">✈️ Travel</button>
+    <button onclick="example('Research and compare laptops for programming')">🛒 Shopping</button>
+    <button onclick="example('Organize and complete my project report')">💼 Work</button>
+    <button onclick="example('Organize my tasks for this week')">🗓️ Planning</button>
+  </div>
+  <button class="launch" onclick="createMission()">CREATE & LAUNCH PLAN →</button>
+</section>
+
+<section id="workspace" class="hidden">
+  <div class="top-grid">
+    <div class="card"><div class="eyebrow">ACTIVE MISSION</div><h2 id="missionTitle">Mission</h2><small id="category">GENERAL</small></div>
+    <div class="card"><small>PROGRESS</small><strong id="percent">0%</strong><div class="bar"><div id="bar"></div></div></div>
+    <div class="card"><small>STATUS</small><strong id="status">READY</strong><p id="statusDetail">Waiting to start</p></div>
+  </div>
+
+  <div class="section-title">
+    <div><div class="eyebrow">PLANNER</div><h2>Mission Route</h2></div>
+    <button class="replan" onclick="replan()">↻ Re-plan</button>
+  </div>
+  <div id="route" class="route"></div>
+
+  <div class="columns">
+    <section class="panel">
+      <div class="panel-head"><h2>☑ Task Controller</h2><span id="counter">0 / 0</span></div>
+      <div id="tasks"></div>
+    </section>
+    <section class="panel">
+      <div class="panel-head"><h2>◉ Live Monitor</h2><span>🟢 LIVE</span></div>
+      <div class="monitor-grid">
+        <div><small>COMPLETED</small><strong id="completed">0</strong></div>
+        <div><small>PENDING</small><strong id="pending">0</strong></div>
+        <div><small>BLOCKED</small><strong id="blocked">0</strong></div>
+      </div>
+      <h3>Activity Log</h3>
+      <div id="log" class="log"></div>
+    </section>
+  </div>
+</section>
+
+<section class="features">
+ <div><b>01</b><h3>PLAN</h3><p>Convert a high-level objective into an actionable workflow.</p></div>
+ <div><b>02</b><h3>DECOMPOSE</h3><p>Split difficult tasks into smaller manageable steps.</p></div>
+ <div><b>03</b><h3>MONITOR</h3><p>Track status and progress through the route.</p></div>
+ <div><b>04</b><h3>ADAPT</h3><p>Re-plan whenever the situation changes.</p></div>
+</section>
+</main>
+</div>
+<script src="app.js"></script>
+</body>
+</html>
